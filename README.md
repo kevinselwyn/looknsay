@@ -2,7 +2,7 @@
 
 An implementation of the look-and-say sequence
 
-##Explanataion
+##Explanation
 
 The look-and-say sequence is a sequence of integers that proceeds like this:
 
