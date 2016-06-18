@@ -2,11 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#if !defined(__APPLE__)
-#include <malloc.h>
-#endif
-
-void next_num(char **next, char *num) {
+static void next_num(char **next, char *num) {
 	int length = 0, count = 0, total = 0, offset = 0;
 	int i = 0, j = 0, k = 0, l = 0;
 	char *tmp = NULL;
@@ -46,7 +42,13 @@ void next_num(char **next, char *num) {
 		offset += sprintf(*next + offset, "%d%c", count, tmp[i]);
 	}
 
-	free(tmp);
+	if (tmp) {
+		free(tmp);
+	}
+}
+
+static void usage(char *exec) {
+	printf("Usage: %s <start> <iterations>\n", exec);
 }
 
 int main(int argc, char *argv[]) {
@@ -54,7 +56,7 @@ int main(int argc, char *argv[]) {
 	char *num = NULL;
 
 	if (argc < 2) {
-		printf("Usage: %s <start> <iterations>\n", argv[0]);
+		usage(argv[0]);
 
 		rc = 1;
 		goto cleanup;
