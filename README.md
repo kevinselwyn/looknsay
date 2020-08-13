@@ -1,8 +1,8 @@
-#looknsay
+# looknsay
 
 An implementation of the look-and-say sequence
 
-##Explanation
+## Explanation
 
 The look-and-say sequence is a sequence of integers that proceeds like this:
 
@@ -34,7 +34,7 @@ etc.
 
 [Further information](http://en.wikipedia.org/wiki/Look-and-say_sequence)
 
-##Usage
+## Usage
 
 ```bash
 Usage: looknsay <start> <iterations>
@@ -46,7 +46,7 @@ So, to list a sequence of 10 integers starting at `1`:
 looknsay 1 10
 ```
 
-##Installation
+## Installation
 
 ```bash
 make && sudo make install
